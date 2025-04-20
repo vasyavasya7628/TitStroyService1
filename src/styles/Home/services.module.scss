@@ -1,0 +1,108 @@
+.btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 6px;
+    margin-bottom: 50px;
+
+    button {
+        max-width: 187px;
+        width: 100%;
+        padding: 11px 5px;
+
+        border-radius: 10px;
+        background: rgba(236, 241, 242, 1);
+
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 1);
+        text-align: center;
+
+        transition: all 0.3s ease-in;
+
+        &:hover,
+        &:focus,
+        &:checked {
+            background: rgba(29, 112, 124, 0.5);
+
+            color: #fff;
+        }
+
+        &.active {
+            background: rgba(29, 112, 124, 1);
+
+            color: #fff;
+        }
+    }
+}
+
+.items {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    .item {
+        max-width: 250px;
+        width: 100%;
+        padding: 12px 10px 10px;
+
+        background: rgba(236, 241, 242, 1);
+        border-radius: 5px;
+
+        text-align: center;
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            aspect-ratio: 229 / 288;
+            gap: 3px;
+            margin-bottom: 32px;
+
+            background: rgba(255, 255, 255, 1);
+            border-radius: 5px;
+            overflow: hidden;
+
+            img {
+                aspect-ratio: 229 / 238;
+                border-radius: 5px;
+            }
+
+            div {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 100%;
+            }
+        }
+        
+        .price {
+            margin-bottom: 4px;
+
+            font-weight: 500;
+            font-size: 18px;
+            color: rgba(110, 110, 110, 1);
+        }
+
+        .link {
+            display: block;
+            max-width: 211px;
+            width: 100%;
+            padding: 11px 5px;
+
+            background: rgba(84, 192, 192, 1);
+            border-radius: 20px;
+
+            font-weight: 400;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 1);
+
+            transition: all 0.3s ease-in;
+
+            &:hover,
+            &:focus,
+            &:checked {
+                background: rgba(84, 192, 192, 0.7);
+            }
+        }
+    }
+}

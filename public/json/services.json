@@ -1,0 +1,60 @@
+{
+    "Physical": [
+        {
+            "id": "teete",
+            "img": "test",
+            "title": "Благоустройство",
+            "price": 100
+        },
+        {
+            "id": "teete",
+            "img": "test",
+            "title": "Благоустройство",
+            "price": 100
+        },
+        {
+            "id": "teete",
+            "img": "test",
+            "title": "Благоустройство",
+            "price": 100
+        },
+        {
+            "id": "teete",
+            "img": "test",
+            "title": "Благоустройство",
+            "price": 100
+        },
+        {
+            "id": "teete",
+            "img": "test",
+            "title": "Благоустройство",
+            "price": 100
+        }
+    ],
+    "Legal": [
+        {
+            "id": "teete",
+            "img": "test",
+            "title": "Благоустройство",
+            "price": 100
+        },
+        {
+            "id": "teete",
+            "img": "test",
+            "title": "Благоустройство",
+            "price": 100
+        },
+        {
+            "id": "teete",
+            "img": "test",
+            "title": "Благоустройство",
+            "price": 100
+        },
+        {
+            "id": "teete",
+            "img": "test",
+            "title": "Благоустройство",
+            "price": 100
+        }
+    ]
+} 

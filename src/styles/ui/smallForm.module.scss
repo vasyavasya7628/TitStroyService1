@@ -1,0 +1,58 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 400px;
+    padding: 38px 22px;
+
+    background: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+
+    div {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+
+        input {
+            padding: 15px 20px;
+
+            background: rgba(242, 242, 242, 0.42);
+            border: 1px solid rgba(201, 201, 201, 0.6);
+            border-radius: 10px;
+
+            font-size: 15px;
+
+            &::placeholder {
+                font-size: 14px;
+                color: rgba(212, 212, 212, 1);
+            }
+        }
+
+        button {
+            padding: 15px 5px;
+
+            background: rgba(84, 192, 192, 1);
+            border-radius: 10px;
+
+            font-weight: 500;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 1);
+            text-align: center;
+
+            transition: all 0.3s ease-in;
+
+            &:hover,
+            &:focus,
+            &:checked {
+                background: rgba(84, 192, 192, 0.7);
+            }
+        }
+    }
+}

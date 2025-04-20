@@ -1,0 +1,28 @@
+.link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .icon {
+        font-size: 26px;
+        color: rgba(0, 0, 0, 0.68);
+
+        &.blue {
+            color: rgba(84, 192, 192, 1);
+        }
+    }
+
+    .text {
+        font-weight: 500;
+        font-size: 18px;
+        color: #000;
+    }
+
+    &:hover,
+    &:focus,
+    &:checked {
+        .icon {
+            color: rgba(0, 0, 0, 1);
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.socials {
+    display: flex;
+    gap: 14px;
+
+    a {
+        font-size: 26px;
+        color: rgba(0, 0, 0, 0.68);
+
+        transition: all 0.3s ease-in;
+        
+        &.blue {
+            color: rgba(84, 192, 192, 1);
+        }
+
+        &:hover,
+        &:focus,
+        &:checked {
+            color: rgba(0, 0, 0, 1);
+        }
+    }
+}
