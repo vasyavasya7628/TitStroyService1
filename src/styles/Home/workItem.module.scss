@@ -1,53 +1,46 @@
 .item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
-    .number {
-        font-style: italic;
-        font-size: 52px;
-        font-weight: 500;
-        color: rgba(255, 255, 255, 0.94);
-        text-shadow:
-            -2px -2px 0 rgba(84, 192, 192, 1),
-            -1px -2px 0 rgba(84, 192, 192, 1),
-             0px -2px 0 rgba(84, 192, 192, 1),
-             1px -2px 0 rgba(84, 192, 192, 1),
-             2px -2px 0 rgba(84, 192, 192, 1),
-    
-            -2px -1px 0 rgba(84, 192, 192, 1),
-            -1px -1px 0 rgba(84, 192, 192, 1),
-             0px -1px 0 rgba(84, 192, 192, 1),
-             1px -1px 0 rgba(84, 192, 192, 1),
-             2px -1px 0 rgba(84, 192, 192, 1),
-    
-            -2px 0px 0 rgba(84, 192, 192, 1),
-            -1px 0px 0 rgba(84, 192, 192, 1),
-             1px 0px 0 rgba(84, 192, 192, 1),
-             2px 0px 0 rgba(84, 192, 192, 1),
-    
-            -2px 1px 0 rgba(84, 192, 192, 1),
-            -1px 1px 0 rgba(84, 192, 192, 1),
-             0px 1px 0 rgba(84, 192, 192, 1),
-             1px 1px 0 rgba(84, 192, 192, 1),
-             2px 1px 0 rgba(84, 192, 192, 1),
-    
-            -2px 2px 0 rgba(84, 192, 192, 1),
-            -1px 2px 0 rgba(84, 192, 192, 1),
-             0px 2px 0 rgba(84, 192, 192, 1),
-             1px 2px 0 rgba(84, 192, 192, 1),
-             2px 2px 0 rgba(84, 192, 192, 1);
+  .number {
+    font-style: italic;
+    font-size: 52px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.94);
+    text-shadow: -2px -2px 0 rgba(84, 192, 192, 1),
+      -1px -2px 0 rgba(84, 192, 192, 1), 0px -2px 0 rgba(84, 192, 192, 1),
+      1px -2px 0 rgba(84, 192, 192, 1), 2px -2px 0 rgba(84, 192, 192, 1),
+      -2px -1px 0 rgba(84, 192, 192, 1), -1px -1px 0 rgba(84, 192, 192, 1),
+      0px -1px 0 rgba(84, 192, 192, 1), 1px -1px 0 rgba(84, 192, 192, 1),
+      2px -1px 0 rgba(84, 192, 192, 1), -2px 0px 0 rgba(84, 192, 192, 1),
+      -1px 0px 0 rgba(84, 192, 192, 1), 1px 0px 0 rgba(84, 192, 192, 1),
+      2px 0px 0 rgba(84, 192, 192, 1), -2px 1px 0 rgba(84, 192, 192, 1),
+      -1px 1px 0 rgba(84, 192, 192, 1), 0px 1px 0 rgba(84, 192, 192, 1),
+      1px 1px 0 rgba(84, 192, 192, 1), 2px 1px 0 rgba(84, 192, 192, 1),
+      -2px 2px 0 rgba(84, 192, 192, 1), -1px 2px 0 rgba(84, 192, 192, 1),
+      0px 2px 0 rgba(84, 192, 192, 1), 1px 2px 0 rgba(84, 192, 192, 1),
+      2px 2px 0 rgba(84, 192, 192, 1);
+
+    @media (max-width: 900px) {
+      font-size: 24px;
+      text-shadow: -1px -1px 0 rgba(84, 192, 192, 1),
+        0px -1px 0 rgba(84, 192, 192, 1), 1px -1px 0 rgba(84, 192, 192, 1),
+        -1px 0px 0 rgba(84, 192, 192, 1), 1px 0px 0 rgba(84, 192, 192, 1),
+        -1px 1px 0 rgba(84, 192, 192, 1), 0px 1px 0 rgba(84, 192, 192, 1),
+        1px 1px 0 rgba(84, 192, 192, 1);
     }
-    
-    .text {
-        max-width: 334px;
+  }
 
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 100%;
+  .text {
+    max-width: 334px;
 
-        &.min {
-            max-width: 255px;
-        }
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+
+    &.min {
+      max-width: 255px;
     }
+  }
 }

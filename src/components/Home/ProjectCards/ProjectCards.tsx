@@ -41,6 +41,7 @@ export default function ProjectCards() {
     }, []);
 
     return (
+        <>
         <div className={styles.slider_content}>
             <Swiper
                 modules={[Navigation]}
@@ -94,5 +95,38 @@ export default function ProjectCards() {
                 </svg>
             </div>
         </div>
+        {/* Flex-контейнер для мобильных устройств */}
+      <div className={styles.slider_mobile}>
+        {projects.slice(0, 3).map((project, index) => (
+          <div key={index} className={styles.item}>
+            <div className={styles.img}>
+              <img src="/img/work.png" alt={project.id} />
+            </div>
+            <h3>{project.title}</h3>
+            <div className={styles.actions}>
+              <span className={styles.actionLink}>
+                {project.day && (
+                  <div className={styles.detailItem}>
+                    <div className={styles.days_legth}>Срок работ</div>
+                    <div className={styles.days_num}>{project.day} дней</div>
+                  </div>
+                )}
+              </span>
+              <div className={styles.divider}></div>
+              <span className={styles.actionLink}>
+                {project.square && (
+                  <div className={styles.detailItem}>
+                    <div className={styles.square}>Площадь</div>
+                    <div className={styles.square_size}>
+                      {project.square} кв.м
+                    </div>
+                  </div>
+                )}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+        </>
     )
 }
