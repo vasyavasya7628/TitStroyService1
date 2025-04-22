@@ -20,14 +20,18 @@
 
     color: rgba(0, 0, 0, 1);
     line-height: 100%;
-
+    @media (max-width: 900px) {
+      padding: 28px 9px 29px 6px;
+    }
     h1 {
-      margin-bottom: 24px;
+      margin-bottom: 20px;
 
       font-weight: 600;
       font-size: 40px;
       line-height: 100%;
       @media (max-width: 900px) {
+        margin-bottom: 0px;
+        margin: 28px 9px 0px 8px;
         font-size: 20px;
       }
     }
@@ -38,6 +42,12 @@
       font-weight: 400;
       font-size: 24px;
       line-height: 100%;
+      @media(max-width:900px){
+        margin-bottom: 0px;
+        margin: 20px 20px 36px 8px;
+        text-align:start;
+        font-size: 14px;
+      }
     }
 
     button {
@@ -57,7 +67,7 @@
 
       transition: all 0.3s ease-in;
       @media (max-width: 900px) {
-        margin-left: 6px;
+        margin-left: 14px;
       }
 
       img {
