@@ -345,6 +345,9 @@
 
   .services_container {
     padding: 0 40px;
+    @media(max-width: 900px){
+      padding: 0 0px;
+    }
 
     h2 {
       margin-left: 60px;
@@ -353,6 +356,11 @@
       font-weight: 600;
       font-size: 40px;
       color: rgba(0, 0, 0, 1);
+      @media(max-width: 900px){
+        margin-left: 0px;
+        font-size: 20px;
+        margin: 6px 0px 18px 25px;
+      }
     }
     .text {
       max-width: 760px;
@@ -366,6 +374,12 @@
       font-size: 16px;
       line-height: 100%;
       color: rgba(49, 49, 49, 1);
+
+      @media(max-width: 900px){
+        padding-left: 0px;
+        margin-left: 0px;
+        font-size: 14px;
+      }
 
       span {
         font-weight: 600;
@@ -383,6 +397,17 @@
 
         background: rgba(255, 211, 115, 1);
         border-radius: 50px;
+        
+      }
+      @media(max-width: 900px){
+        &::before {
+          width: 15%;
+          height: 2px;
+          top: -10px;
+          left: 3%; 
+          background: rgba(255, 211, 115, 1);
+          border-radius: 2px;
+        }
       }
     }
     .link {
