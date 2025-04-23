@@ -7,6 +7,14 @@
   overflow: hidden;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  @media (max-width: 900px) {
+    position: absolute;
+    width: 360px;
+    height: 528px;
+    left: calc(50% - 360px / 2);
+    top: 0px;
+    border-radius: 0px 0px 10px 10px;
+  }
 
   .hero_container {
     max-width: 1050px;
@@ -20,20 +28,12 @@
 
     color: rgba(0, 0, 0, 1);
     line-height: 100%;
-    @media (max-width: 900px) {
-      padding: 28px 9px 29px 6px;
-    }
     h1 {
       margin-bottom: 20px;
 
       font-weight: 600;
       font-size: 40px;
       line-height: 100%;
-      @media (max-width: 900px) {
-        margin-bottom: 0px;
-        margin: 28px 9px 0px 8px;
-        font-size: 20px;
-      }
     }
 
     div {
@@ -42,12 +42,6 @@
       font-weight: 400;
       font-size: 24px;
       line-height: 100%;
-      @media(max-width:900px){
-        margin-bottom: 0px;
-        margin: 20px 20px 36px 8px;
-        text-align:start;
-        font-size: 14px;
-      }
     }
 
     button {
@@ -95,10 +89,6 @@
     left: 50%;
     z-index: -1;
     transform: translate(-50%, -50%);
-
-    @media (max-width: 925px) {
-      width: auto;
-    }
   }
 }
 
@@ -345,7 +335,7 @@
 
   .services_container {
     padding: 0 40px;
-    @media(max-width: 900px){
+    @media (max-width: 900px) {
       padding: 0 0px;
     }
 
@@ -356,7 +346,7 @@
       font-weight: 600;
       font-size: 40px;
       color: rgba(0, 0, 0, 1);
-      @media(max-width: 900px){
+      @media (max-width: 900px) {
         margin-left: 0px;
         font-size: 20px;
         margin: 6px 0px 18px 25px;
@@ -375,7 +365,7 @@
       line-height: 100%;
       color: rgba(49, 49, 49, 1);
 
-      @media(max-width: 900px){
+      @media (max-width: 900px) {
         padding-left: 0px;
         margin-left: 0px;
         font-size: 14px;
@@ -397,14 +387,13 @@
 
         background: rgba(255, 211, 115, 1);
         border-radius: 50px;
-        
       }
-      @media(max-width: 900px){
+      @media (max-width: 900px) {
         &::before {
           width: 15%;
           height: 2px;
           top: -10px;
-          left: 3%; 
+          left: 3%;
           background: rgba(255, 211, 115, 1);
           border-radius: 2px;
         }
@@ -584,11 +573,11 @@
     font-size: 40px;
     color: rgba(0, 0, 0, 1);
     @media (max-width: 900px) {
-        font-size: 24px;
-        margin-bottom: 0px;
-        margin-left: 2%;
-        padding: 69px 207px 20px 25px;
-      }
+      font-size: 24px;
+      margin-bottom: 0px;
+      margin-left: 2%;
+      padding: 69px 207px 20px 25px;
+    }
   }
 
   .text {
@@ -621,25 +610,25 @@
       background: rgba(255, 211, 115, 1);
       border-radius: 50px;
     }
-    b{
-        font-weight: 400;
-        font-size: 16px;
+    b {
+      font-weight: 400;
+      font-size: 16px;
+    }
+    @media (max-width: 900px) {
+      b {
+        font-size: 14px;
+        font-weight: 700;
       }
-      @media (max-width: 900px) {
-        b{
-          font-size: 14px;
-          font-weight: 700;
-        }
-        margin-left: 25px;
-        &::before {
-          width: 15%;
-          height: 2px;
-          top: -10px;
-          left: 3%; 
-          background: rgba(255, 211, 115, 1);
-          border-radius: 2px;
-        }
+      margin-left: 25px;
+      &::before {
+        width: 15%;
+        height: 2px;
+        top: -10px;
+        left: 3%;
+        background: rgba(255, 211, 115, 1);
+        border-radius: 2px;
       }
+    }
   }
 
   .btn {
@@ -655,7 +644,7 @@
       font-weight: 500;
       font-size: 16px;
       text-decoration: underline;
-      @media(max-width: 900px){
+      @media (max-width: 900px) {
         width: 204px;
         height: 17px;
         font-weight: 500;
@@ -666,7 +655,7 @@
     .arrow {
       font-size: 20px;
       transform: rotate(45deg);
-      @media(max-width: 900px){
+      @media (max-width: 900px) {
         border-radius: 2px;
       }
     }
@@ -677,10 +666,10 @@
     justify-content: space-between;
     align-items: center;
     margin: 0 60px;
-    @media(max-width: 900px){
-        display: flex;
-        flex-direction: column;
-      }
+    @media (max-width: 900px) {
+      display: flex;
+      flex-direction: column;
+    }
 
     div {
       max-width: 750px;
@@ -688,15 +677,15 @@
       font-weight: 500;
       font-size: 20px;
       line-height: 100%;
-      @media(max-width: 900px){
+      @media (max-width: 900px) {
         max-width: 322px;
         font-size: 14px;
         width: auto;
         text-align: center;
         padding-bottom: 13px;
       }
-      span{
-        @media(max-width: 900px){
+      span {
+        @media (max-width: 900px) {
           display: block;
           max-width: 250px;
           margin: 0 auto;
@@ -729,7 +718,7 @@
       &:checked {
         background: rgba(84, 192, 192, 0.7);
       }
-      @media(max-width: 900px){
+      @media (max-width: 900px) {
         font-weight: 400;
         font-size: 12px;
         max-width: 213px;

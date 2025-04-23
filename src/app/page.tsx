@@ -64,7 +64,7 @@ export default function Home() {
           />
         )}
       </section>
-
+ {/*
       <section className={styles.short}>
         <div className="container">
           <div className={styles.short_container}>
@@ -270,6 +270,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      */ }
     </>
   );
 }
