@@ -46,7 +46,7 @@ export default function Home() {
             </h1>
             <div>
               Фиксированные сроки и стоимость, специалисты с опытом &gt; 8 лет.
-              Работаем по ТКП, СН и СТБ ISO 9001
+              <span>Работаем по ТКП, СН и СТБ ISO 9001</span>
             </div>
 
             <button id="getForm">
@@ -64,13 +64,13 @@ export default function Home() {
           />
         )}
       </section>
- {/*
+
       <section className={styles.short}>
         <div className="container">
           <div className={styles.short_container}>
             <Short title="90%" description="объектов сданы в срок" />
             <Short title="1 день" description="расчет сметы" />
-            <Short description="Реализуем любые идеи и проекты" />
+            <Short description="Реализуем любые идеи &nbsp;и проекты" />
             <Short description="Начнём работу уже завтра" />
           </div>
         </div>
@@ -270,7 +270,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      */ }
+      
     </>
   );
 }

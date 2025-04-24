@@ -29,7 +29,7 @@
     @media (max-width: 900px) {
       width: 100%;
       max-width: 100%;
-      padding: 30px 20px;
+      padding: 30px 18px;
       margin: 0 auto;
       border-radius: 10px;
       backdrop-filter: blur(10px);
@@ -61,6 +61,11 @@
       @media (max-width: 900px) {
         font-size: 14px;
         margin-bottom: 36px;
+      }
+    }
+    span{
+      @media(max-width: 900px){
+        display: block;
       }
     }
 
@@ -110,7 +115,7 @@
     transform: translate(-50%, -50%);
 
     @media (max-width: 900px) {
-      height: 87%;
+      height: 100%;
       aspect-ratio: 1 / 1.2;
       border-radius: 10px;
       object-fit: cover;
@@ -120,21 +125,26 @@
 
 .short {
   padding: 22px 0 54px;
-
+  @media (max-width: 900px) {
+    padding: 18px 7px 31px 6px;
+  }
   .short_container {
     display: flex;
     justify-content: space-evenly;
     @media (max-width: 900px) {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: space-between;
       gap: 8px;
-      padding: 0 6px;
-      margin-bottom: 18px;
+      
+      > * {
+        flex: 0 0 calc(50% - 4px);
+      }
     }
   }
-  @media (max-width: 900px) {
-    padding: 18px 0 31px;
-  }
+
 }
 
 .corporation {
