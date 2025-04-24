@@ -1,0 +1,38 @@
+.certificates {
+    max-width: 1158px;
+    margin: 0 auto;
+    .certificate {
+
+    }
+
+    .management {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 430px;
+        margin: 15px auto 0;
+    }
+
+    .pagination {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    
+        .bullet {
+            height: 9px;
+            aspect-ratio: 1;
+            border-radius: 20px;
+            background: rgba(88, 180, 191, 0.39);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.3s ease;
+    
+            &.active {
+                aspect-ratio: 40 / 9;
+                background: rgba(88, 180, 191, 1);
+            }
+        }
+    }
+}

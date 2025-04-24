@@ -2,13 +2,14 @@ import styles from '@style/ui/smallForm.module.scss';
 
 interface SmallFormProps {
     title?: string
+    left?: boolean
 }
 
-export default function SmallForm({title}: SmallFormProps) {
+export default function SmallForm({title, left}: SmallFormProps) {
     return (
         <div  className={styles.form}>
             {
-                title ? <div>{title}</div> : null
+                title ? left ? <div style={{textAlign: 'left'}}>{title}</div> : <div>{title}</div> : null
             }
             <form>
                 <input type="text" placeholder="Ваше имя"/>

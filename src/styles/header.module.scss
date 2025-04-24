@@ -1,5 +1,6 @@
 .header {
     width: 100%;
+    padding: 13px 0 8px;
 
     position: absolute;
     z-index: 9999;
@@ -13,5 +14,33 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        nav {
+            display: flex;
+            gap: 25px;
+
+            .menu_link {
+                font-weight: 400;
+                font-size: 16px;
+                color: rgba(0, 0, 0, 1);
+            }
+        }
+
+        .tel {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            font-weight: 700;
+            color: rgba(29, 112, 124, 1);
+
+            .icon {
+                font-size: 20px;
+            }
+            .text {
+                font-size: 16px;
+                text-decoration: underline;
+            }
+        }
     }
 }

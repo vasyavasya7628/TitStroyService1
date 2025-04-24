@@ -20,6 +20,10 @@ export default function UrlLinks() {
                 return 'Тендерная деятельность';
             case 'contacts':
                 return 'Контакты';
+            case 'about':
+                return 'О компании';
+            case 'contractors':
+                return 'Подрядчикам';
             default:
                 return page || 'Пусто';
         }

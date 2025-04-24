@@ -57,9 +57,9 @@ export default function Header() {
                         ))}
                     </nav>
 
-                    <a href="tel:+375445044771">
-                        <span className="icon-phone" />
-                        <span>+375 (44) 504-47-71</span>
+                    <a className={styles.tel} href="tel:+375445044771">
+                        <span className={`${styles.icon} icon-phone`} />
+                        <span className={styles.text}>+375 (44) 504-47-71</span>
                     </a>
                 </div>
             </div>
