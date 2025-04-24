@@ -1,19 +1,17 @@
 .hero {
   padding: 190px 0 20px;
-
   position: relative;
   z-index: 1;
-
   overflow: hidden;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+
   @media (max-width: 900px) {
-    position: absolute;
-    width: 360px;
-    height: 528px;
-    left: calc(50% - 360px / 2);
-    top: 0px;
-    border-radius: 0px 0px 10px 10px;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 189px 16px 67px 6px;
+    border-radius: 0;
   }
 
   .hero_container {
@@ -21,27 +19,49 @@
     width: 100%;
     margin-left: 0;
     padding: 68px 58px;
-
     background: rgba($color: #ffffff, $alpha: 0.8);
     backdrop-filter: blur(20px);
     border-radius: 10px;
-
     color: rgba(0, 0, 0, 1);
     line-height: 100%;
+    
+
+    @media (max-width: 900px) {
+      width: 100%;
+      max-width: 100%;
+      padding: 30px 20px;
+      margin: 0 auto;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      width: 95vw;
+      max-width: 95vw;
+
+      margin-left: calc((100% - 95vw) / 2);
+    }
+
     h1 {
       margin-bottom: 20px;
-
       font-weight: 600;
       font-size: 40px;
-      line-height: 100%;
+      line-height: 120%;
+
+      @media (max-width: 900px) {
+        font-size: 20px;
+        margin-bottom: 20px;
+        line-height: 130%;
+      }
     }
 
     div {
       margin-bottom: 45px;
-
       font-weight: 400;
       font-size: 24px;
-      line-height: 100%;
+      line-height: 130%;
+
+      @media (max-width: 900px) {
+        font-size: 14px;
+        margin-bottom: 36px;
+      }
     }
 
     button {
@@ -49,33 +69,33 @@
       width: 100%;
       padding: 13px 19px 16px;
       position: relative;
-
       border-radius: 10px;
       border: 1px solid rgba(84, 192, 192, 1);
       background: rgba(84, 192, 192, 1);
-
       font-weight: 400;
       font-size: 14px;
       color: rgba(255, 255, 255, 1);
       text-align: center;
-
       transition: all 0.3s ease-in;
+
       @media (max-width: 900px) {
-        margin-left: 14px;
+        max-width: 60%;
+        padding: 12px 15px 12px 40px;
+        font-size: 12px;
+        margin-right: auto;
+        margin-bottom: 0px;
+        text-align: left;
+        
       }
 
       img {
+        max-width: 30%;
         position: absolute;
         top: 55%;
         left: 0;
-
         transform: translate(-50%, -50%);
-      }
-
-      &:hover,
-      &:focus,
-      &:checked {
-        background: rgba(84, 192, 192, 0.6);
+        padding-left: 6px;
+        
       }
     }
   }
@@ -83,12 +103,18 @@
   .back {
     width: 100%;
     aspect-ratio: 1440 / 960;
-
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: -1;
     transform: translate(-50%, -50%);
+
+    @media (max-width: 900px) {
+      height: 87%;
+      aspect-ratio: 1 / 1.2;
+      border-radius: 10px;
+      object-fit: cover;
+    }
   }
 }
 
