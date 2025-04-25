@@ -126,7 +126,7 @@
 .short {
   padding: 22px 0 54px;
   @media (max-width: 900px) {
-    padding: 18px 7px 31px 6px;
+    padding: 18px 7px 0px 6px;
   }
   .short_container {
     display: flex;
@@ -149,24 +149,32 @@
 
 .corporation {
   padding: 33px 0 58px;
-
+  @media (max-width: 900px) {
+    padding: 72px 14px 67px 14px;
+  }
   .corporation_container {
     padding: 20px 36px;
 
     background: rgba(255, 255, 255, 1);
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(46, 59, 65, 0.05);
+    @media (max-width: 900px) {
+      padding: 0px 0px;
+
+    }
 
     h2 {
       margin-bottom: 65px;
-
+      
       font-weight: 600;
       font-size: 40px;
       color: rgba(0, 0, 0, 1);
       text-align: center;
       @media (max-width: 900px) {
         font-size: 20px;
-        margin-bottom: 25px;
+        padding-top: 25px;
+        padding-bottom: 20px;
+        margin-bottom: 0px;
       }
     }
 
@@ -263,27 +271,28 @@
       }
 
       @media (max-width: 900px) {
-        width: 100% !important;
+        width: auto !important;
         height: auto !important;
         max-width: 160px;
+        object-fit: contain;
 
         &:nth-child(1) {
-          max-height: 90px;
+          max-height: 53px;
         }
         &:nth-child(2) {
-          max-height: 85px;
+          max-height: 50px;
         }
         &:nth-child(3) {
-          max-height: 80px;
+          max-height: 46px;
         }
         &:nth-child(4) {
-          max-height: 100px;
+          max-height: 60px;
         }
         &:nth-child(5) {
-          max-height: 80px;
+          max-height: 46px;
         }
         &:nth-child(6) {
-          max-height: 95px;
+          max-height: 55px;
         }
       }
     }
@@ -323,6 +332,9 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 25px 15px;
+      @media(max-width:900px){
+        gap: 8px 6px;
+      }
 
       .block {
         display: flex;
@@ -343,7 +355,9 @@
         color: rgba(0, 0, 0, 1);
         text-align: center;
         line-height: 100%;
-
+        @media(max-width:900px){
+          height: auto;
+        }
         &:nth-last-child(2) {
           grid-column: 1 / 3;
         }
@@ -353,7 +367,7 @@
 
         @media (max-width: 900px) {
           grid-column: span 2;
-
+          
           &:nth-last-child(2) {
             grid-column: 1 / 5;
           }
@@ -368,11 +382,14 @@
 
 .services {
   padding: 80px 0;
-
+  @media (max-width: 900px) {
+    padding-top: 64px;
+  }
   .services_container {
     padding: 0 40px;
     @media (max-width: 900px) {
       padding: 0 0px;
+      
     }
 
     h2 {
@@ -383,9 +400,9 @@
       font-size: 40px;
       color: rgba(0, 0, 0, 1);
       @media (max-width: 900px) {
-        margin-left: 0px;
+        
         font-size: 20px;
-        margin: 6px 0px 18px 25px;
+        margin-left: 25px;
       }
     }
     .text {
@@ -400,10 +417,15 @@
       font-size: 16px;
       line-height: 100%;
       color: rgba(49, 49, 49, 1);
-
+      br{
+        display: none;
+      }
       @media (max-width: 900px) {
+        br{
+          display:block;
+        }
         padding-left: 0px;
-        margin-left: 0px;
+        margin-left: 25px;
         font-size: 14px;
       }
 
@@ -426,10 +448,9 @@
       }
       @media (max-width: 900px) {
         &::before {
-          width: 15%;
-          height: 2px;
-          top: -10px;
-          left: 3%;
+          width: 6vh;
+          height: 0.2vh;
+          top: -1.5vh;
           background: rgba(255, 211, 115, 1);
           border-radius: 2px;
         }
