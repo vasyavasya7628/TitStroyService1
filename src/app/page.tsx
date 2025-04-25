@@ -96,7 +96,14 @@ export default function Home() {
       <section className={styles.what}>
         <div className="container min">
           <div className={styles.what_container}>
-            <h2>Почему 150+ клиентов выбрали нас</h2>
+            <h2>
+              <span className={styles.span_mobile}>
+                Почему 150+ клиентов доверяют нам
+              </span>
+              <span className={styles.span_desktop}>
+                Почему 150+ клиентов выбрали нас
+              </span>
+            </h2>
 
             <div className={styles.what_blocks}>
               <What
@@ -171,7 +178,9 @@ export default function Home() {
             <div className={styles.text}>
               Мы берем на себя весь процесс - от замера до сдачи объекта,
               обеспечивая результат <span>от 30 до 90 дней</span>, в зависимости
-              от объема работ.<br/><br/> Работаем с частными и коммерческими объектами по
+              от объема работ.
+              <br />
+              <br /> Работаем с частными и коммерческими объектами по
               фиксированной договорной цене и гарантией от 2-х лет
             </div>
 
@@ -270,7 +279,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
     </>
   );
 }
