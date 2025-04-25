@@ -5,7 +5,9 @@
   justify-content: end;
   gap: 6px;
   margin-bottom: 50px;
-
+  @media(max-width: 900px ){
+    margin-bottom: 25px;
+  }
   button {
     max-width: 187px;
     width: 100%;
@@ -20,9 +22,21 @@
     text-align: center;
 
     transition: all 0.3s ease-in;
+    .mobile_span{
+      display: none;
+    }
+    
     @media(max-width:900px){
       padding: 0px 0px;
-      margin:0px 26px;
+      padding: 0px 0px;
+      width: 111px;
+      height: 29px;
+      .mobile_span{
+        display: block;
+      }
+      span{
+        display: none;
+      }
     }
     &:hover,
     &:focus,

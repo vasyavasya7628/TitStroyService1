@@ -35,10 +35,10 @@ export default function Services() {
         <div className={styles.services}>
             <div className={styles.btns}>
                 <button className={activeTab === 'Physical' ? styles.active : ''} onClick={() => setActiveTab('Physical')}>
-                    Физические лица
+                    <span>Физические лица</span><span className={styles.mobile_span}>Физ. лицам</span>
                 </button>
                 <button className={activeTab === 'Legal' ? styles.active : ''} onClick={() => setActiveTab('Legal')}>
-                    Юридические лица
+                <span>Юридические лица</span><span className={styles.mobile_span}>Юр. лицам</span>
                 </button>
             </div>
 
