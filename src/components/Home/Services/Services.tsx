@@ -50,7 +50,7 @@ export default function Services() {
                             className={styles.item}
                         >
                             <div className={styles.content}>
-                                <img src="" alt={item.title} />
+                                <img src="https://www.figma.com/file/zYjVyJfNq8PXjbYPxiwVbd/image/d83f92da2ac15f952139b13667b345e112a709f9" alt={item.title} />
                                 <div>{item.title}</div>
                             </div>
 

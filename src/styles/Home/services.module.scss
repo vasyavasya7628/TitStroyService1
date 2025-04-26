@@ -5,8 +5,9 @@
   justify-content: end;
   gap: 6px;
   margin-bottom: 50px;
-  @media(max-width: 900px ){
+  @media (max-width: 900px) {
     margin-bottom: 25px;
+    justify-content: center;
   }
   button {
     max-width: 187px;
@@ -22,19 +23,20 @@
     text-align: center;
 
     transition: all 0.3s ease-in;
-    .mobile_span{
+    .mobile_span {
       display: none;
     }
-    
-    @media(max-width:900px){
+
+    @media (max-width: 900px) {
+      border-radius: 5px;
       padding: 0px 0px;
-      padding: 0px 0px;
-      width: 111px;
+      width: 31%;
+      font-size: 12px;
       height: 29px;
-      .mobile_span{
+      .mobile_span {
         display: block;
       }
-      span{
+      span {
         display: none;
       }
     }
@@ -42,7 +44,9 @@
     &:focus,
     &:checked {
       background: rgba(29, 112, 124, 0.5);
-
+      @media (max-width: 900px) {
+        background: #55888f;
+      }
       color: #fff;
     }
 
@@ -50,6 +54,9 @@
       background: rgba(29, 112, 124, 1);
 
       color: #fff;
+      @media (max-width: 900px) {
+        background: #55888f;
+      }
     }
   }
 }
@@ -85,19 +92,19 @@
       background: rgba(255, 255, 255, 1);
       border-radius: 5px;
       overflow: hidden;
+      @media (max-width: 900px) {
+        aspect-ratio: unset;
+        height: auto;
+      }
 
       img {
         aspect-ratio: 229 / 238;
         border-radius: 5px;
         @media (max-width: 900px) {
-          background-image: url("https://www.figma.com/file/zYjVyJfNq8PXjbYPxiwVbd/image/d83f92da2ac15f952139b13667b345e112a709f9");
-          height: 294px;
-          width: auto;
-          border-radius: 12px;
-          overflow: hidden;
+          aspect-ratio: 7 / 3;
           width: 100%;
-          height: 100%;
-          object-fit: cover;
+          height: auto;
+          border-radius: 12px;
         }
       }
 
