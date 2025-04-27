@@ -65,7 +65,8 @@ export default function Accordion() {
 
             {canLoadMore && (
                 <button onClick={loadMoreItems} className={styles.more}>
-                    Показать больше
+                    <span className={styles.more_text}>Показать больше</span>
+                    <span className={`${styles.icon} icon-Vector`} />
                 </button>
             )}
         </div>

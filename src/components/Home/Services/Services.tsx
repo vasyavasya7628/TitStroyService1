@@ -69,8 +69,11 @@ export default function Services() {
                 alt={item.title}
               />
               <div>{item.title}</div>
+              
             </div>
-            <span className={styles.text_example}>При наличии текста - описания ставим его здесь</span>
+            <span className={styles.text}>При наличии текста - описания ставим его здесь</span>
+            <span className={styles.line}></span>
+            <span className={styles.vector}><span className="icon-Vector"></span></span>
             <div className={styles.price}>от {item.price} руб / кв.м</div>
             <Link href="/services" className={styles.link}>
               Заказать

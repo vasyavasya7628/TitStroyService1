@@ -187,7 +187,10 @@ export default function Home() {
             <Services />
 
             <Link href="/services" className={styles.link}>
-              Смотреть все услуги
+              Смотреть все услуги&nbsp;
+              <span className={styles.arrow}>
+                <span className="icon-arrow-up"></span>
+              </span>
             </Link>
           </div>
         </div>

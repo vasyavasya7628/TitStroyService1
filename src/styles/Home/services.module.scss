@@ -70,8 +70,7 @@
     margin-left: 21px;
     margin-right: 5px;
   }
-  
-  
+
   .item {
     max-width: 250px;
     width: 100%;
@@ -83,7 +82,7 @@
       border-radius: 10px;
       max-width: 100%;
     }
-    
+
     .content {
       display: flex;
       flex-direction: column;
@@ -94,15 +93,12 @@
       border-radius: 5px;
       overflow: hidden;
       @media (max-width: 900px) {
-       
         gap: 3px;
         margin-bottom: 18px;
         aspect-ratio: unset;
         height: auto;
-        
       }
-      
-      
+
       img {
         aspect-ratio: 229 / 238;
         border-radius: 5px;
@@ -113,7 +109,7 @@
           border-radius: 12px;
         }
       }
-      
+
       div {
         font-weight: 600;
         font-size: 16px;
@@ -121,11 +117,9 @@
         @media (max-width: 900px) {
           margin-top: 3px;
           margin-bottom: 6px;
-          font-size: 14px; 
+          font-size: 14px;
         }
       }
-
-
     }
 
     .price {
@@ -137,6 +131,37 @@
         color: #58b4bf;
         margin-bottom: 6px;
         font-size: 14px;
+      }
+    }
+    .text {
+      display: none;
+      @media (max-width: 900px) {
+        display: block;
+        font-size: 12px;
+        text-align: start;
+        padding-bottom: 6px;
+      }
+    }
+    .line {
+      display: none;
+      @media (max-width: 900px) {
+        display: block;
+        width: 46%; /* Ширина линии (можно изменить) */
+        height: 0.1vh; /* Толщина линии */
+        background-color: #96969661;
+        margin: 0 auto; /* Центрирование */
+        
+      }
+    }
+    .vector {
+      display: none;
+      @media (max-width: 900px) {
+        
+        display: block;
+        rotate: 90deg;
+        
+        font-size: 12px;
+        color:#96969661;
       }
     }
 
@@ -152,14 +177,15 @@
       color: rgba(255, 255, 255, 1);
       transition: all 0.3s ease-in;
       @media (max-width: 900px) {
+        background: #58B4BF;
         margin: 0 auto;
+        font-size: 12px;
       }
 
       &:hover,
       &:focus {
         background: rgba(84, 192, 192, 0.7);
       }
-      
     }
   }
 }
