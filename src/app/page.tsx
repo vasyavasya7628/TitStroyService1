@@ -209,7 +209,7 @@ export default function Home() {
                 <div className={styles.arrow} />
                 <WorkItem
                   number={3}
-                  text="Составление дефектного акта, сметы и предварительное согласование этапов работ"
+                  text="Составление дефектного акта, <br />сметы и предварительное <br />согласование этапов работ"
                 />
                 <div className={styles.arrow} />
                 <WorkItem number={4} text="Заключение договора" />
@@ -218,13 +218,13 @@ export default function Home() {
               <div className={styles.row}>
                 <WorkItem
                   number={5}
-                  text="Согласование и закупка материалов"
+                  text="Согласование и закупка <br />материалов"
                   min={true}
                 />
                 <div className={styles.arrow} />
                 <WorkItem
                   number={6}
-                  text="Выполнение работ с информированием заказчика о ходе процесса"
+                  text="Выполнение работ с <br />информированием заказчика <br />о ходе процесса"
                 />
                 <div className={styles.arrow} />
                 <WorkItem
@@ -236,6 +236,19 @@ export default function Home() {
                 <WorkItem number={8} text="Оплата выполненных работ" />
               </div>
             </div>
+
+            <span className={styles.mobile_text_white}>
+              Хотите узнать точную стоимость и сроки? Оставьте заявку –
+              рассчитаем за 1 день <br />
+              после замера!
+            </span>
+            <span className={styles.mobile_text_grey}>
+              Сделайте первый шаг к реализации вашего <br />
+              проекта уже сегодня
+            </span>
+            <button className={styles.button}>
+            Оставить заявку
+            </button>
 
             <img src="/img/work.png" alt="work" />
           </div>

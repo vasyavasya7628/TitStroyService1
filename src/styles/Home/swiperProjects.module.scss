@@ -156,16 +156,11 @@
       }
   
       .img {
-        height: 294px;
-        width: auto;
-        border-radius: 12px;
-        overflow: hidden;
-  
-        img {
+        aspect-ratio: 229 / 238;
+        aspect-ratio: 7 / 3;
           width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
+          height: auto;
+          border-radius: 12px;
       }
   
       .actions {
