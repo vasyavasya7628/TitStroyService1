@@ -261,7 +261,7 @@ export default function Home() {
             <h2>Проекты</h2>
             <div className={styles.text}>
               Создаем комфортное пространство, в котором хочется жить и
-              работать. Мы успешно завершили &gt;150 проектов по Беларуси, 98%
+              работать.<br/> Мы успешно завершили <b>&gt;150 проектов</b> по Беларуси, <b>98% </b> 
               из них сданы без задержек.
             </div>
 
@@ -280,7 +280,7 @@ export default function Home() {
                   Хотите качественный результат? Доверьте работу профессионалам!
                 </span>
               </div>
-              <button>Получить консультацию</button>
+              <button><span className={styles.button_text_desktop}>Получить консультацию</span><span className={styles.button_text_mobile}>Оставить заявку</span></button>
             </div>
           </div>
         </div>

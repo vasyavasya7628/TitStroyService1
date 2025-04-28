@@ -103,6 +103,9 @@ export default function ProjectCards() {
               <img src="/img/work.png" alt={project.id} />
             </div>
             <h3>{project.title}</h3>
+            <span className={styles.first_line}></span>
+            <span className={styles.second_line}></span>
+            <span className={styles.third_line}></span>
             <div className={styles.actions}>
               <span className={styles.actionLink}>
                 {project.day && (
