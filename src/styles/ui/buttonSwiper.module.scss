@@ -1,0 +1,37 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 50px;
+    width: 100%;
+    aspect-ratio: 1;
+
+    position: relative;
+
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+
+    font-size: 22px;
+
+    span {
+        padding-left: 2px;
+
+        transition: all 0.3s ease-in;
+    }
+
+    &.rotate {
+        span {
+            transform: rotate(180deg);
+        }
+    }
+
+    &:hover,
+    &:focus,
+    &:checked {
+        span {
+            scale: 1.25;
+        }
+    }
+}

@@ -12,6 +12,7 @@
     border-radius: 0px 0px 5px 5px;
     background-color: #a8ced8;
   }
+
   .header_container {
     display: flex;
     justify-content: space-between;
@@ -25,6 +26,33 @@
       display: flex;
       justify-content: space-between;
     }
+    nav {
+      display: flex;
+      gap: 25px;
+
+      .menu_link {
+          font-weight: 400;
+          font-size: 16px;
+          color: rgba(0, 0, 0, 1);
+      }
+  }
+
+  .tel {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      font-weight: 700;
+      color: rgba(29, 112, 124, 1);
+
+      .icon {
+          font-size: 20px;
+      }
+      .text {
+          font-size: 16px;
+          text-decoration: underline;
+      }
+  }
   }
   @media (max-width: 900px) {
     img {
@@ -43,4 +71,5 @@
       font-weight: 700;
     }
   }
+  
 }

@@ -3,11 +3,12 @@
 import styles from '@style/ui/submitApplication.module.scss';
 
 interface SubmitApplicationProps{
-    text: string
+    text: string,
+    onClick?: () => void
 }
 
-export default function SubmitApplication({text}: SubmitApplicationProps) {
+export default function SubmitApplication({text, onClick}: SubmitApplicationProps ) {
     return (
-        <button className={styles.button}>{text}</button>
+        <button className={styles.button} onClick={onClick}>{text}</button>
     )
 }

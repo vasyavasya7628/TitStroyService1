@@ -1,38 +1,33 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 import Short from "@/components/Home/Short/Short";
 import What from "@/components/Home/What/What";
 
-import api from "@utils/api/unsplash";
+import api from "@utils/api/main";
 
 import styles from "@style/home.module.scss";
 import Services from "@/components/Home/Services/Services";
 import WorkItem from "@/components/Home/WorkItem/WorkItem";
 import ProjectCards from "@/components/Home/ProjectCards/ProjectCards";
 import Accordion from "@/components/Home/Accordion/Accordion";
+import Mail from "@/ui/Mail";
+import Mobile from "@/ui/Mobile";
+import Social from "@/ui/Social";
+import SmallForm from "@/ui/SmallForm";
+import Reviews from "@/components/Reviews/Reviews";
 
 export default function Home() {
-  const getApi = api();
-  const [imageSrc, setImageSrc] = useState("");
-
-  useEffect(() => {
-    async function fetchImage() {
-      try {
-        const img = await getApi.getImage(
-          "photo-1521459515210-b8176945b104",
-          1440,
-          960
-        );
-        setImageSrc(img);
-      } catch (error) {
-        console.error("Ошибка загрузки изображения:", error);
-      }
-    }
-    fetchImage();
-  }, []);
+  const contactRef = useRef<HTMLDivElement>(null);
+      
+  const scrollToContact = () => {
+      contactRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+      });
+  };
 
   return (
     <>
@@ -49,20 +44,14 @@ export default function Home() {
               <span>Работаем по ТКП, СН и СТБ ISO 9001</span>
             </div>
 
-            <button id="getForm">
+            <button id='getForm' onClick={scrollToContact}>
               <img src="/svg/arrow.svg" alt="arrow" />
               Связаться с нами
             </button>
           </div>
         </div>
 
-        {imageSrc && (
-          <img
-            src={imageSrc}
-            alt="Фоновое изображение"
-            className={styles.back}
-          />
-        )}
+        <img src={`${process.env.NEXT_PUBLIC_API_BASE_URL}/file_media/uploads/compress/15987c7fe589277aeb4cf03d05d4a22d.webp`} alt="back" className={styles.back} />
       </section>
 
       <section className={styles.short}>
@@ -255,6 +244,21 @@ export default function Home() {
         </div>
       </section>
 
+      <section className={styles.reviews}>
+        <div className="container">
+          <div className={styles.reviews_container}>
+            <h2>90% клиентов выбирают нас повторно и рекомендуют другим</h2>
+            <div className={styles.main}>Наше качество подтверждают реальные результаты и довольные клиенты</div>
+
+            <Reviews />
+
+            <div className={styles.link}>
+              Мы ценим доверие и мнение каждого клиента! Уже работали с нами? Оставьте свой отзыв на <Link href="https://yandex.ru/maps/org/titstroyservis/132168442855/reviews/?ll=27.542787%2C53.937923&z=14" target="_blank">Яндекс</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className={styles.projects}>
         <div className="container">
           <div className={styles.projects_container}>
@@ -295,6 +299,38 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className={styles.application} ref={contactRef}>
+          <div className="container">
+              <div className={styles.application_container}>
+                  <h3>Мы осуществляем строительство и ремонт объектов различной сложности по всей Беларуси – от жилых квартир до коммерческих зданий и промышленных сооружений</h3>
+
+                  <div className={styles.texts}>
+                    Свяжитесь с нами или оставьте заявку, и мы подберем лучшее решение под ваш проект
+                  </div>
+
+                  <div className={styles.content}>
+                      <div className={styles.contact}>
+                          <div className={styles.questions_text}>
+                              <strong>Адрес:</strong> 220013, Республика Беларусь<br/>
+                              г. Минск, ул. П. Бровки, д 30/1<br/>
+                              <strong>График работы:</strong> пн - пт 9:00 - 17:00
+                          </div>
+
+                          <div className={styles.socials}>
+                              <Mobile />
+                              <Mail />
+                              <Social />
+                          </div>
+                      </div>
+
+                      <SmallForm/>
+                  </div>
+              </div>
+          </div>
+
+          <img src={`${process.env.NEXT_PUBLIC_API_BASE_URL}/file_media/uploads/compress/1166125876b34d3874ed0c89d32e548a.webp`} alt="Задник" />
+        </section>
     </>
   );
 }

@@ -47,16 +47,15 @@ export default function Header() {
             <img src="/logo.png" alt="logo" />
           </Link>
 
-          <nav>
-            {menuItems.map(
-              (item) =>
-                item.visibility && (
-                  <Link href={item.link} className={styles.menu_link}>
-                    {item.title}
-                  </Link>
-                )
-            )}
-          </nav>
+                    <nav>
+                        {menuItems.map((item, index) => (
+                            item.visibility && (
+                                <Link href={item.link} className={styles.menu_link} key={index}>
+                                    {item.title}
+                                </Link>
+                            )
+                        ))}
+                    </nav>
 
           <a href="tel:+375445044771">
             <span className="icon-phone" />

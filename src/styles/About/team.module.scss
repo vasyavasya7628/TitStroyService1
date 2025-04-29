@@ -1,0 +1,61 @@
+.team {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .swiper {
+        margin: 0 20px;
+        max-width: 1075px;
+        width: 100%;
+
+        .personal {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            padding-bottom: 23px;
+
+            border-radius: 10px;
+            background: rgba(88, 178, 191, 1);
+            box-shadow: 0 4px 10px 0 rgba(46, 59, 65, 0.1);
+
+            text-align: center;
+
+            .img {
+                max-height: 238px;
+                aspect-ratio: 244 / 238;
+                margin-bottom: 15px;
+
+                position: relative;
+
+                border-radius: 10px;
+                overflow: hidden;
+
+                img {
+                    height: 100%;
+
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .title {
+                margin-bottom: 4px;
+
+                font-weight: 600;
+                font-size: 18px;
+                line-height: 100%;
+                color: rgba(255, 255, 255, 1);
+            }
+
+            .text {
+                font-weight: 500;
+                font-size: 16px;
+                color: rgba(255, 255, 255, 0.68);
+            }
+        }
+    }
+}

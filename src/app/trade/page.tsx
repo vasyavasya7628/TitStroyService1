@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 import UrlLinks from '@/ui/UrlLinks';
@@ -12,23 +12,15 @@ import Social from "@/ui/Social";
 
 import styles from '@style/trade.module.scss';
 
-import api from "@utils/api/unsplash";
-
 export default function Trade() {
-    const getApi = api();
-    const [imageSrc, setImageSrc] = useState("");
+    const contactRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        async function fetchImage() {
-        try {
-            const img = await getApi.getImage("photo-1521459515210-b8176945b104", 1440, 960);
-            setImageSrc(img);
-        } catch (error) {
-            console.error("Ошибка загрузки изображения:", error);
-        }
-        }
-        fetchImage();
-    }, []);
+    const scrollToContact = () => {
+        contactRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    };
 
     return (
         <>
@@ -47,7 +39,8 @@ export default function Trade() {
                     </div>
                 </div>
 
-                {imageSrc && <img src={imageSrc} alt="Фоновое изображение" className={styles.back} />}
+
+                <img src={`${process.env.NEXT_PUBLIC_API_BASE_URL}/file_media/uploads/compress/9e14ba941eb277eb1ff4037046202c80b7616ac8.webp`} alt="Фоновое изображение" className={styles.back} />
             </section>
 
             <section className={styles.ooo}>
@@ -119,7 +112,7 @@ export default function Trade() {
                         </div>
                     </div>
 
-                    <SubmitApplication text="Связаться с нами"/>
+                    <SubmitApplication text="Связаться с нами" onClick={scrollToContact}/>
                 </div>
             </section>
 
@@ -180,7 +173,7 @@ export default function Trade() {
                 </div>
             </section>
 
-            <section className={styles.questions}>
+            <section className={styles.questions} ref={contactRef}>
                 <div className="container">
                     <div className={styles.questions_container}>
                         <h3>Берем на себя все вопросы – от подготовки документов до сдачи объекта, в любом регионе Беларуси. Вы получаете готовый результат без лишних сложностей</h3>
