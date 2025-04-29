@@ -50,7 +50,7 @@ export default function Services() {
                             className={styles.item}
                         >
                             <div className={styles.content}>
-                                <img src="" alt={item.title} />
+                                <img src="#" alt={item.title} />
                                 <div>{item.title}</div>
                             </div>
 

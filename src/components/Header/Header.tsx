@@ -48,9 +48,9 @@ export default function Header() {
                     </Link>
 
                     <nav>
-                        {menuItems.map(item => (
+                        {menuItems.map((item, index) => (
                             item.visibility && (
-                                <Link href={item.link} className={styles.menu_link}>
+                                <Link href={item.link} className={styles.menu_link} key={index}>
                                     {item.title}
                                 </Link>
                             )

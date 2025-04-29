@@ -1,6 +1,7 @@
-'use client';
+"use client";
 
 import Link from 'next/link';
+import { useRef } from 'react';
 
 import UrlLinks from '@/ui/UrlLinks';
 import Promise from '@/components/About/Promise/Promise';
@@ -14,6 +15,15 @@ import SmallForm from '@/ui/SmallForm';
 import styles from '@style/about.module.scss';
 
 export default function About() {
+    const contactRef = useRef<HTMLDivElement>(null);
+
+    const scrollToContact = () => {
+        contactRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    };
+    
     return (
         <>
             <section className={styles.hero}>
@@ -46,7 +56,7 @@ export default function About() {
                         <div className={styles.content}>
                             <div className={styles.main}>Хотите воплотить любую вашу идею в жизнь с четкими сроками без задержек?</div>
                             <div className={styles.second}>Оставьте заявку и мы свяжемся с вами уже сегодня!</div>
-                            <button>Оставить заявку</button>
+                            <button onClick={scrollToContact}>Оставить заявку</button>
                         </div>
                     </div>
                 </div>
@@ -73,7 +83,7 @@ export default function About() {
                 </div>
             </section>
 
-            <section className={styles.application}>
+            <section className={styles.application} id='сontact' ref={contactRef}>
                 <div className="container">
                     <div className={styles.application_container}>
                         <h3>Хотите ремонт и строительство без рисков? Оставьте заявку - и мы предложим лучшее решение под ваш проект!</h3>

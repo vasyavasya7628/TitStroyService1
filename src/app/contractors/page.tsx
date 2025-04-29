@@ -1,14 +1,35 @@
+"use client"
+
 import SmallForm from "@/ui/SmallForm";
 import UrlLinks from "@/ui/UrlLinks";
 import Promise from '@/components/About/Promise/Promise';
 
 import styles from '@style/Contractors/contractors.module.scss';
 import Vacancys from "@/components/Contractors/Vacancy/Vacancys";
+import Accordion from "@/components/Home/Accordion/Accordion";
+import { useRef } from "react";
 
 export default function Contractors() {
+    const contactRef = useRef<HTMLDivElement>(null);
+    const partnerRef = useRef<HTMLDivElement>(null);
+    
+    const scrollToContact = () => {
+        contactRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    };
+
+    const scrollToPartner = () => {
+        partnerRef.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+    };
+    
     return (
         <>
-            <section className={styles.hero}>
+            <section className={styles.hero} id='сontact' ref={contactRef}>
                 <div className="container">
                     <div className={styles.hero_container}>
                         <UrlLinks />
@@ -41,7 +62,7 @@ export default function Contractors() {
                             advantages={true}
                         />
 
-                        <button>Стать нашим подрядчиком</button>
+                        <button onClick={scrollToContact}>Стать нашим подрядчиком</button>
                     </div>
                 </div>
             </section>
@@ -75,7 +96,7 @@ export default function Contractors() {
                 </div>
             </section>
 
-            <section className={styles.advertisement}>
+            <section className={styles.advertisement} ref={partnerRef}>
                 <div className="container">
                     <div className={styles.advertisement_container}>
                         <div className={styles.content}>
@@ -83,7 +104,7 @@ export default function Contractors() {
                             <div>Заполните заявку, и мы свяжемся с вами!</div>
                         </div>
 
-                        <form>
+                        <form id="advertisement">
                             <input type="text" required placeholder="Ваше имя" />
                             <input type="tel" required placeholder="Номер телефона" />
                             <label htmlFor="file" className={styles.input}>
@@ -101,16 +122,59 @@ export default function Contractors() {
                 </div>
             </section>
 
+            <section className={styles.offer}>
+                <div className="container">
+                    <div className={styles.offer_container}>
+                        <h2>Что мы предлагаем</h2>
+
+                        <div className={styles.content}>
+                            <div>
+                                <span className={`${styles.icon} icon-lets-icons_done-ring-round`} />
+                                <span className={styles.text}>Стабильные заказы</span>
+                            </div>
+                            <div>
+                                <span className={`${styles.icon} icon-lets-icons_done-ring-round`} />
+                                <span className={styles.text}>Прозрачные условия – четкие ТЗ, без скрытых условий</span>
+                            </div>
+                            <div>
+                                <span className={`${styles.icon} icon-lets-icons_done-ring-round`} />
+                                <span className={styles.text}>Официальное сотрудничество с гарантиями</span>
+                            </div>
+                            <div>
+                                <span className={`${styles.icon} icon-lets-icons_done-ring-round`} />
+                                <span className={styles.text}>Минимизация простоев</span>
+                            </div>
+                        </div>
+
+                        <div className={styles.description}>Готовы к сотрудничеству? Оставьте заявку, и мы свяжемся с вами!</div>
+
+                        <button onClick={scrollToPartner}>Оставить заявку</button>
+                    </div>
+                </div>
+            </section>
+
             <section className={styles.vacancy}>
                 <div className="container">
                     <div className={styles.vacancy_container}>
                         <div className={styles.vacancy_content}>
                             <h2>Открытые вакансии</h2>
 
-                            <Vacancys />
+                            <Vacancys onClick={scrollToPartner}/>
                         </div>
 
                         <img src={`${process.env.NEXT_PUBLIC_API_BASE_URL}/file_media/uploads/compress/15987c7fe589277aeb4cf03d05d4a22d.webp`} alt="back" />
+                    </div>
+                </div>
+            </section>
+
+            <section className={styles.accordion}>
+                <div className="container">
+                    <div className={styles.accordion_container}>
+                        <h2>Часто задаваемые вопросы</h2>
+
+                        <Accordion />
+
+                        <button className={styles.contact} onClick={scrollToContact}>Связаться с нами</button>
                     </div>
                 </div>
             </section>

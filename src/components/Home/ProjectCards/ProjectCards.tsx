@@ -7,34 +7,60 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import styles from '@style/Home/swiperProjects.module.scss';
+import api from '@/utils/api/main';
 
 interface ProjectCard {
-    id: string;
-    img: string;
-    title: string;
-    day: number;
-    square?: number;
-    cost?: number;
+    block_media: any;
+    block_id: string;
+    block_name: string;
+    text_blocks: TextBlock[];
+}
+
+interface TextBlock {
+    block: string;
+    text_type: TextType;
+    value_ru: string;
+}
+
+interface TextType {
+    name: string;
+}
+
+interface MediaData {
+    file_url: string
 }
 
 export default function ProjectCards() {
-    const [projects, setProjects] = useState<ProjectCard[]>([]);
-    const [loading, setLoading] = useState(true);
+    const { getProjects, getImage } = api();
+    const [projects, setProjects] = useState<{
+        content: ProjectCard,
+        imageUrl: string
+    }[]>([]);
     
     useEffect(() => {
         const fetchProjects = async () => {
-          try {
-            const response = await fetch('/json/projects.json');
-            if (!response.ok) {
-              throw new Error('Не удалось загрузить данные');
+            try {
+                const projects: ProjectCard[] = await getProjects()
+
+                const projectWithImage = await Promise.all(
+                  projects.map(async (project: ProjectCard) => {
+                    let imageUrl = '/default-avatar.webp'
+                    if (project.block_media?.[0]?.media) {
+                        try {
+                            const mediaData: MediaData = await getImage(project.block_media[0].media)
+                            imageUrl = mediaData.file_url
+                        } catch (e) {
+                            console.error(`Failed to load image for ${project.block_name}`, e)
+                        }
+                    }
+                    return { content: project, imageUrl }
+                  })  
+                );
+
+                setProjects(projectWithImage);
+            } catch (error) {
+                console.error("Ошибка загрузки проектов:", error);
             }
-            const data = await response.json();
-            setProjects(data);
-          } catch (err) {
-            console.error('Ошибка загрузки данных:', err);
-          } finally {
-            setLoading(false);
-          }
         };
     
         fetchProjects();
@@ -53,34 +79,34 @@ export default function ProjectCards() {
                 loop={projects.length > 1}
                 className={styles.slider}
             >
-                {projects.map((project, index) => (
-                    <SwiperSlide key={index} className={styles.item}>
-                        <div className={styles.img}>
-                            <img src="/img/work.png" alt={project.id} />
-                        </div>
+                {projects.map((project, index) => {
+                    const title = project.content.block_name;
+                    const period = project.content.text_blocks.find((td: TextBlock) => td.text_type.name === "Period")?.value_ru;
+                    const price = project.content.text_blocks.find((td: TextBlock) => td.text_type.name === "price")?.value_ru;
 
-                        <h3>{project.title}</h3>
-
-                        <div className={styles.days}>
-                            <div className={styles.days_text}>Срок работ</div>
-                            <div className={styles.days_meaning}>{project.day} дней</div>
-                        </div>
-                        
-                        {project.cost && (
-                            <div className={styles.content}>
-                                <div className={styles.content_text}>Стоимость</div>
-                                <div className={styles.content_meaning}>{project.cost} руб / кв.м</div>
+                    return (
+                        <SwiperSlide key={index} className={styles.item}>
+                            <div className={styles.img}>
+                                <img src={`${process.env.NEXT_PUBLIC_API_BASE_URL}${project.imageUrl}`} alt={project.content.block_id} />
                             </div>
-                        )}
 
-                        {project.square && (
-                            <div className={styles.content}>
-                                <div className={styles.content_text}>Площадь</div>
-                                <div className={styles.content_meaning}>{project.square} кв.м</div>
+                            <h3>{title}</h3>
+
+                            <div className={styles.days}>
+                                <div className={styles.days_text}>Срок работ</div>
+                                <div className={styles.days_meaning}>{period}</div>
                             </div>
-                        )}
-                    </SwiperSlide>
-                ))}
+                            
+                            {price && (
+                                <div className={styles.content}>
+                                    <div className={styles.content_text}>Стоимость</div>
+                                    <div className={styles.content_meaning}>{price}</div>
+                                </div>
+                            )}
+                        </SwiperSlide>
+                    )
+                }
+                )}
             </Swiper>
 
             <div className={`${styles.navButton} ${styles.prevButton}`}>

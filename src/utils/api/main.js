@@ -81,6 +81,28 @@ function api() {
         }
     }
 
+    async function getProjects() {
+        try {
+            const response = await fetch(`${API_BASE_URL}/pages/pages/${process.env.NEXT_PUBLIC_PROJECTS_ID}/`);
+            const data = await response.json();
+            return data.blocks;
+        } catch (error) {
+            console.error('Error:', error);
+            throw error;
+        }
+    }
+    
+    async function getReviews() {
+        try {
+            const response = await fetch(`${API_BASE_URL}/pages/pages/${process.env.NEXT_PUBLIC_REVIEWS_ID}/`);
+            const data = await response.json();
+            return data.blocks;
+        } catch (error) {
+            console.error('Error:', error);
+            throw error;
+        }
+    }
+
     return {
         getUrlHeader,
         getPromise,
@@ -88,7 +110,9 @@ function api() {
         getImage,
         getCertificates,
         getAdvantages,
-        getVacancys
+        getVacancys,
+        getProjects,
+        getReviews
     }
 }
 

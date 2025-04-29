@@ -31,7 +31,11 @@ interface TextType {
     desc: string;
 }
 
-export default function Vacancys() {
+interface VacancysProps {
+    onClick?: () => void;
+}
+
+export default function Vacancys({ onClick }: VacancysProps) {
     const { getVacancys } = api();
     const [vacancies, setVacancies] = useState<Vacancy[]>([]);
     const [expandedBlocks, setExpandedBlocks] = useState<Record<string, boolean>>({});
@@ -75,7 +79,7 @@ export default function Vacancys() {
                                     <div className={styles.smallDescription}>{smallDescription}</div>
                                 </div>
 
-                                <a href={url.link} target="_blank" rel="noopener noreferrer">{url.name}</a>
+                                <button onClick={onClick}>{url.name}</button>
                             </div>
 
                             <div className={styles.description} data-expanded={isExpanded || undefined}>{description}</div>
