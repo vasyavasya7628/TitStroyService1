@@ -979,7 +979,7 @@
 
         transform: translate(-50%, -50%);
 
-        @media (max-width: 980px) {
+        @media (max-width: 900px) {
             width: auto;
         }
     }
@@ -987,7 +987,9 @@
 
 .reviews {
     padding: 75px 0;
-
+    @media (max-width:900px) {
+      padding: 75px 0px 30px 0px;
+    }
     .reviews_container {
         h2 {
             max-width: 840px;
@@ -996,6 +998,12 @@
             font-weight: 600;
             font-size: 40px;
             color: #000;
+            @media (max-width:900px) {
+              font-size: 20px;
+              padding-left: 25px;
+              padding-bottom: 20px;
+              margin: 0 0 0px 0px;
+            }
         }
 
         .main {
@@ -1004,6 +1012,10 @@
             font-weight: 400;
             font-size: 16px;
             color: rgba(49, 49, 49, 1);
+            @media (max-width:900px) {
+              padding-left: 20px;
+              margin: 0 0 0px 0px;
+            }
         }
 
         .link {
@@ -1016,7 +1028,10 @@
             line-height: 100%;
             color: rgba(0, 0, 0, 1);
             text-align: center;
-
+            @media (max-width:900px) {
+              max-width: 900px;
+              margin: 0 0 0px;
+            }
             a {
                 font-weight: 500;
                 text-decoration: underline;
