@@ -247,7 +247,7 @@ export default function Home() {
       <section className={styles.reviews}>
         <div className="container">
           <div className={styles.reviews_container}>
-            <h2>90% клиентов выбирают нас повторно и рекомендуют другим</h2>
+            <h2>90% клиентов выбирают <br/>нас повторно и <br/>рекомендуют другим</h2>
             <div className={styles.main}>Наше качество подтверждают реальные результаты и довольные клиенты</div>
 
             <Reviews />
